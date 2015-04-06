@@ -5,6 +5,7 @@ import (
 	"testing"
 )
 
+// Tests 1000 concurrent inserts at a time
 func BenchmarkAdd(b *testing.B) {
 	list := NewLazyList()
 	for n := 0; n < b.N; n++ {
