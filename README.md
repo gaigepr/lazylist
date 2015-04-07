@@ -6,18 +6,57 @@ This implementation is based on the following white paper: http://people.csail.m
 Examples
 -------
 ```
+package main
+
 import (
         "github.com/gaigepr/lazylist"
 
-        "math/rand"
+        "fmt"
 )
 
 func main() {
+        fmt.Println("We add 10 things to the list 1 at a time.")
         list := lazylist.NewLazyList()
-        for i := 0; i < 25; i++ {
-                list.Add(uint64(rand.Int()))
+        for i := 0; i < 10; i++ {
+                list.Add(uint64(i))
         }
         list.PrintLazyList()
+        
+        // We add 10 things to the list 1 at a time.
+        // 0
+        // 1
+        // 2
+        // 3
+        // 4
+        // 5
+        // 6
+        // 7
+        // 8
+        // 9
+
+        fmt.Println("We remove even numbers from the list.")
+        for i := 0; i < 10; i++ {
+                if i%2 == 0 {
+                        list.Remove(uint64(i))
+                }
+        }
+        list.PrintLazyList()
+        
+        // We remove even numbers from the list.
+        // 1
+        // 3
+        // 5
+        // 7
+        // 9
+
+        fmt.Println("Is 9 in there?")
+        fmt.Println(list.Contains(uint64(9)))
+        
+        // Is 9 in there?
+        // true
+
+        // Concurrent examples coming soon!
+        // You can just put "go" in front of any of the functions and it'll work!
 }
 ```
 
