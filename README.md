@@ -76,10 +76,13 @@ $ GOMAXPROCS=8 go test -bench=.
 
 BenchmarkAdd-8       100          19447525 ns/op
 ok      github.com/gaigepr/lazylist     2.009s
-
 ```
-
-With only 1 thread:
+With up to 4 Processes
+```
+BenchmarkAdd-4       100          34776539 ns/op
+ok      github.com/gaigepr/lazylist     3.544s
+```
+With up to 1 Processes
 ```
 $ GOMAXPROCS=1 go test -bench=.
 
