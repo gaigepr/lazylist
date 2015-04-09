@@ -83,7 +83,6 @@ With only 1 thread:
 ```
 $ GOMAXPROCS=1 go test -bench=.
 
-BenchmarkAdd-8       100          19447525 ns/op
-ok      github.com/gaigepr/lazylist     2.009s
-
+BenchmarkAdd         100         185902241 ns/op
+ok      github.com/gaigepr/lazylist     18.689s
 ```
