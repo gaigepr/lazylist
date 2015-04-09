@@ -68,7 +68,13 @@ Mine is tested on the following:
 * AMD FX-8120 Zambezi 8-Core 3.1GHz
 * 16 GB DDR3 RAM @ 1600Mhz
 
-This test only test 100 simeltaneous inserts. Nothing more so far.
+This test only test 1000 'simeltaneous' inserts. Nothing more so far.
+```
+$ GOMAXPROCS=8 go test -bench=.
+```
+
+Yields.
+
 ```
 BenchmarkAdd-8       100          19447525 ns/op
 ok      github.com/gaigepr/lazylist     2.009s
