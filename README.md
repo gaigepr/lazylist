@@ -5,6 +5,12 @@ This implementation is based on the following white paper: http://people.csail.m
 
 If you have serious doubts about the safety or purpose of this data structure please refer to te above paper. I would prefer feedback to be related to *my* implemenatation and its merits or lack thereof. If you see something that, after reading the paper, seems wrong let me know!
 
+Features
+--------
+* Wait and lock free membership testing.
+* "lazy" deletion. 
+* Safe concurrent insertion.
+
 Examples
 -------
 ```
