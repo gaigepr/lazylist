@@ -34,6 +34,17 @@ func (L *LazyList) Contains(key uint64) bool {
 	return curr.Key == key && !curr.Marked
 }
 
+// An order n size function for the lazylist.
+func (L *LazyList) Size() (total uint64) {
+	curr := L.Head
+	for curr != L.Tail {
+		curr = curr.Next
+		total += 1
+	}
+	// We subtract one to account for the head
+	return total - 1
+}
+
 // Add a new Entry to the list.
 // Returns true if and only if the Entry with Key `key` did not exists and does now.
 func (L *LazyList) Add(key uint64) bool {
