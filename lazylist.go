@@ -90,11 +90,22 @@ func (L *LazyList) Remove(key uint64) bool {
 	}
 }
 
-// Returns a new empty LazyList.
-func NewLazyList() LazyList {
-	tail := Entry{MaxUint, nil, false, sync.Mutex{}}
-	head := Entry{MinUint, &tail, false, sync.Mutex{}}
-	list := LazyList{&head, &tail}
+// Returns a reference to a new empty LazyList.
+func NewLazyList() *LazyList {
+	tail := new(Entry)
+	tail.Key = MaxUint
+	tail.Next = nil
+	tail.Marked = false
+	tail.Lock = sync.Mutex{}
+
+	head := new(Entry)
+	head.Key = MinUint
+	head.Next = tail
+	head.Marked = false
+	head.Lock = sync.Mutex{}
+	list := new(LazyList)
+	list.Head = head
+	list.Tail = tail
 	return list
 }
 
