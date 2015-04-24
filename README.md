@@ -1,6 +1,11 @@
 # LazyList
 A Lazy Concurrent List-Based Set Algorithm in Go with lock and wait free membership testing. 
 
+readme README
+-------------
+Due to this not being a go-friendly data structure (and I mean that in terms of idomatic code and properly using the go concurrency paradigm) I don't have immediate plans to continue this project. 
+
+
 This implementation is based on the following white paper: http://people.csail.mit.edu/shanir/publications/Lazy_Concurrent.pdf
 
 If you have serious doubts about the safety or purpose of this data structure please refer to te above paper. I would prefer feedback to be related to *my* implemenatation and its merits or lack thereof. If you see something that, after reading the paper, seems wrong let me know!
